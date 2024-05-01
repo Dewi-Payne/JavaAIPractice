@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class Agent {
@@ -8,11 +11,15 @@ public class Agent {
 	}
 	
 	public int getMove(Game game) {
-		int rnd = new Random().nextInt(game.board.length) -1;
-		if (game.isLegalMove(rnd, colour)){
-			return rnd;
+		ArrayList<Integer> available_indeces = new ArrayList();
+		for (int i=0; i<=game.board.length; i++) {
+			if (game.isLegalMove(i, colour)){
+				available_indeces.add(i);
+			}
 		}
-		return getMove(game);
+		Collections.shuffle(available_indeces);
+		if (available_indeces.size() == 0) {return -1;}
+		return available_indeces.get(0);
 	}
 
 	public int getColour() {
