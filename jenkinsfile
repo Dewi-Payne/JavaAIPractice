@@ -9,8 +9,12 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'mvn test'
-                junit 'reports/**/*.xml
             }
+        }
+    }
+    post {
+        always {
+            junit 'build/reports/**/*.xml'
         }
     }
 }
