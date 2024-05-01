@@ -12,7 +12,7 @@ public class Agent {
 	
 	public int getMove(Game game) {
 		ArrayList<Integer> available_indeces = new ArrayList();
-		for (int i=0; i<=game.board.length; i++) {
+		for (int i=0; i<=game.board.length-1; i++) {
 			if (game.isLegalMove(i, colour)){
 				available_indeces.add(i);
 			}
