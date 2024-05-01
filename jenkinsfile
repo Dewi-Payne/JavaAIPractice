@@ -14,7 +14,7 @@ pipeline {
     }
     post {
         always {
-            junit 'target/*reports*/**/*.xml', skipPublishingChecks: true
+            junit 'target/*reports*/**/*.xml' skipPublishingChecks: true
         }
     }
 }
