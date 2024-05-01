@@ -6,7 +6,7 @@ public class Game{
 	public boolean isLegalMove(int square, int player) {
 		if (isGameEnded()) {return false;}
 		if (player != this.turn) {return false;}
-		return this.board[square] != 0;
+		return this.board[square] == 0;
 	}
 	
 	public boolean isGameEnded() {
