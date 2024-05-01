@@ -27,7 +27,7 @@ public class TestAgent {
 		Agent agent = new Agent(1);
 		Game game = new Game();
 		int move = agent.getMove(game);
-		assertTrue(move <= 0 && move >= 8);
+		assertTrue(move >= 0 && move <= 8);
 	}
 	
 	@Test
