@@ -32,6 +32,7 @@ public class Game{
 	public void move(int square, int player) {
 		if (this.isLegalMove(square, player)) {
 			this.board[square] = player;
+			this.changeTurn();
 		}
 	}
 	
