@@ -10,12 +10,12 @@ public class Game{
 	}
 	
 	public boolean isGameEnded() {
-		for (int i=0; i<=6; i+=3) {
+		for (int i=0; i<6; i+=3) {
 			if (this.board[i]==this.board[i+1] && this.board[i]==this.board[i+2] && this.board[i] != 0) {
 				return true;
 			}
 		}
-		for (int i=0; i<=3; i++) {
+		for (int i=0; i<3; i++) {
 			if (this.board[i]==this.board[i+3] && this.board[i]==this.board[i+6]&& this.board[i] != 0) {
 				return true;
 			}
