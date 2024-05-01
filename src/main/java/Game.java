@@ -8,6 +8,7 @@ public class Game{
 		if (player != this.turn) {return false;}
 		return this.board[square] != 0;
 	}
+	
 	public boolean isGameEnded() {
 		for (int i=0; i<=6; i+=3) {
 			if (this.board[i]==this.board[i+1] && this.board[i]==this.board[i+2] && this.board[i] != 0) {
@@ -27,9 +28,22 @@ public class Game{
 		}
 		return false;
 	}
+	
 	public void move(int square, int player) {
 		if (this.isLegalMove(square, player)) {
 			this.board[square] = player;
 		}
+	}
+	
+	public void changeTurn() {
+		this.turn = this.turn *= -1;
+	}
+	
+	public int[] getBoard(){
+		return this.board;
+	}
+	
+	public void setBoard(int[] newBoard) {
+		this.board = newBoard;
 	}
 }
