@@ -8,7 +8,7 @@ public class Agent {
 	}
 	
 	public int getMove(Game game) {
-		int rnd = new Random().nextInt(game.board.length);
+		int rnd = new Random().nextInt(game.board.length) -1;
 		if (game.isLegalMove(rnd, colour)){
 			return rnd;
 		}
